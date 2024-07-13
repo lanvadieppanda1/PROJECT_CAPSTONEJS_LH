@@ -1,7 +1,6 @@
-
 // utilities
-@import "./utilities/mixins";
 @import "./utilities/variables";
+@import "./utilities/mixins";
 
 // base
 @import "./base/reset";
@@ -20,7 +19,8 @@
 
 // pages
 @import "./pages/home";
-@import "./pages/customer";
+@import "./pages/shop";
 
 // themes
+@import "./themes/client";
 @import "./themes/admin";

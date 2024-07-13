@@ -53,6 +53,7 @@ header {
   box-shadow: 0 0 10px #c9d8f4;
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
 
 .nav-link {
@@ -60,8 +61,28 @@ header {
   padding: 0 20px !important;
   position: relative;
 }
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+.nav-link.cart {
+  margin-right: 20px;
+}
 .nav-link.cart::after {
   content: none;
+}
+.nav-link.cart .quantity {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #575757;
+  top: -10px;
+  color: #fff;
+  right: -2px;
+  font-size: 18px;
 }
 .nav-link::after {
   content: "";
@@ -111,4 +132,26 @@ header {
 }
 .admin table img {
   max-width: 80px;
+}
+.admin .modal label {
+  font-weight: 500;
+}
+.admin .modal select {
+  font-size: 20px;
+}
+.admin #btnSearchPrd {
+  cursor: pointer;
+}
+.admin #selectSort {
+  font-size: 20px;
+}
+
+::-moz-placeholder {
+  color: #b0b0b0;
+  font-size: 20px;
+}
+
+::placeholder {
+  color: #b0b0b0;
+  font-size: 20px;
 }/*# sourceMappingURL=main.css.map */

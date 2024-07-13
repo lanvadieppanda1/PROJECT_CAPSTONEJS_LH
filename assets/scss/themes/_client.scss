@@ -1,0 +1,96 @@
+.client {
+  padding-top: 100px;
+}
+
+
+select#filter {
+  cursor: pointer;
+
+  &:hover {
+    color: #333;
+    background-color: #3eecac;
+    background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
+  }
+}
+
+.card {
+  margin-bottom: 20px;
+  position: relative;
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .card-body {
+    .card-title {
+      color: $secondary-color;
+    }
+  }
+
+  .cart-btn,
+  .buy-btn {
+    // display: none;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .cart-btn {
+    background-color: $cart-button-bg;
+  }
+
+  .buy-btn {
+    background-color: $primary-color;
+  }
+
+  .cart-btn:hover,
+  .buy-btn:hover
+   {
+    // display: block;
+    -webkit-filter: brightness(120%); 
+    transition: all 0.5s;
+  }
+  
+  &:hover {
+    box-shadow: 1px 1px 10px rgba(36, 36, 36, 0.5);
+    transition: all 0.5s;
+  }
+}
+
+.card:hover .card-title {
+    color: $primary-color;
+    transition: all 0.5s;
+  }
+
+.card:hover .card-img-top {
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+#cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $cart-button-bg;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  &:hover {
+    background-color: darken($cart-button-bg, 10%);
+  }
+}
