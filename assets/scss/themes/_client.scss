@@ -53,7 +53,6 @@ select#filter {
   .buy-btn:hover
    {
     // display: block;
-    -webkit-filter: brightness(120%); 
     transition: all 0.5s;
   }
   
@@ -93,4 +92,13 @@ select#filter {
   &:hover {
     background-color: darken($cart-button-bg, 10%);
   }
+}
+
+.cart__products,
+.cart__totals {
+    padding: 28px;
+}
+
+.cart__totals {
+    background-color: #f7f7f7;
 }
