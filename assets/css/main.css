@@ -24,6 +24,52 @@
   border-color: #000000;
 }
 
+.card {
+  box-shadow: 6px 6px 12px #f4f4f4, -6px -6px 12px #f4f4f4;
+  background-color: #fff;
+  border: none;
+  padding: 30px 10px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .card {
+    padding: 20px 10px 15px;
+  }
+  .card .card-body {
+    padding: 1rem 0;
+  }
+}
+.card:hover {
+  box-shadow: 0px 5px 15px 5px #d6d6d6;
+  transform: translateY(-10px);
+}
+.card-title {
+  font-size: 22px;
+}
+@media screen and (max-width: 767px) {
+  .card-title {
+    font-size: 20px;
+    min-height: 33px;
+  }
+}
+.card-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+.card-img {
+  aspect-ratio: 1;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+.card-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .heading {
   font-size: 30px;
 }
@@ -205,6 +251,21 @@ select#filter:hover {
 
 .cart__totals {
   background-color: #f7f7f7;
+}
+
+.quantity {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #575757;
+  top: -10px;
+  color: #fff;
+  right: -2px;
+  font-size: 18px;
 }
 
 .admin {
