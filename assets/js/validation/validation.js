@@ -2,11 +2,12 @@
 
 let checkEmpty = (elem, value) => {
     if (value === "") {
-        elem.innerHTML = "Not empty please!";
-        elem.style.display = 'block'
+        elem.style.display = 'block';
+        elem.textContent = "Not empty please!";
         return false;
     } else {
-        elem.innerHTML = "";
+        elem.style.display = 'none';
+        elem.textContent = "";
         return true;
     }
 }

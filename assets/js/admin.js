@@ -1,15 +1,34 @@
 let products = [];
 let BASE_URL = "https://5b2b636747a7720014ca8489.mockapi.io/list/Products";
 
+// hide modal
+let hideModal = () => {
+    var myModalEl = document.getElementById('exampleModal');
+    var modal = bootstrap.Modal.getInstance(myModalEl)
+    modal.hide();
+}
+
 // get info product
-let getInfoProduct = () => {
+let getInfoProduct = (temp) => {
     let itemProduct = new Product();
-    let arrInput = document.querySelectorAll(".modal input , .modal select");
+    let arrInput = document.querySelectorAll('.modal input , .modal select');
+    let flagCkeck = true;
+    let checkEmplyValue = true;
     for (let input of arrInput) {
-        const { id, value } = input;
-        itemProduct[id] = value;
+        const { id, value } = input
+        itemProduct[id] = value
+        let elem = document.getElementById("tb_" + id);
+        if (temp != "1" && id == "idProduce") {
+            checkEmplyValue = checkEmpty(elem, value);
+        }
+        flagCkeck &= checkEmplyValue
+        if (!checkEmplyValue) {
+            continue
+        }
     }
-    return itemProduct;
+    if (flagCkeck) {
+        return itemProduct;
+    }
 };
 
 // get API
@@ -45,7 +64,7 @@ let renderProduct = (arr = products) => {
         <button class="btn btn-danger" onclick="removeProduct('${item.id
             }')">Xoá</button>
         <button class="btn btn-warning" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" onclick="editProduct('${item.id
+                data-bs-target="#exampleModal" onclick="editProduct('${item.id
             }')">Sửa</button>
       </td>
     </tr>
@@ -74,7 +93,7 @@ let removeProduct = async (id) => {
 
 // add product
 let addProduct = async () => {
-    let infoProduct = getInfoProduct();
+    let infoProduct = getInfoProduct("1");
     if (!infoProduct) {
         return false;
     }
@@ -85,6 +104,7 @@ let addProduct = async () => {
             data: infoProduct
         })
         getAPI();
+        hideModal();
         showError('Add product success!')
     } catch (error) {
         showError('Add product fail!')
@@ -121,7 +141,7 @@ let editProduct = async (id) => {
         for (let input of arrInput) {
             input.value = result[input.id]
         }
-        document.getElementById("idProd").value = id
+        document.getElementById("idProduce").value = id
     } catch (error) {
         console.log("error: ", error);
     }
@@ -129,15 +149,19 @@ let editProduct = async (id) => {
 
 // update product
 let updateProduct = async () => {
-    let infoprod = getInfoProduct();
-    let id = document.getElementById("id").value;
+    let infoProduct = getInfoProduct();
+    if (!infoProduct) {
+        return false;
+    }
+    let id = document.getElementById("idProduce").value;
     try {
         let getApiProd = await axios({
             method: "PUT",
             url: `${BASE_URL}/${id}`,
-            data: infoprod,
+            data: infoProduct,
         });
         getAPI();
+        hideModal();
         showError("Update product success!");
 
     } catch (error) {

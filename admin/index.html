@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,90 +6,97 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="shortcut icon" href="../assets/image/favicon.png" type="image/x-icon" />
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
 
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <!-- font awesome -->
+  <!-- font icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Bootstrap CSS v5.3.3 -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
+  <!-- toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
 <body>
-  <!-- header -->
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
       <div class="container">
-        <a class="navbar-brand logo" href="/">admin</a>
+        <a class="navbar-brand logo" href="/">LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div class="navbar-nav align-items-center">
-            <a class="btn-switch" href="../index.html" aria-disabled="true">Client</a>
+            <a class="btn-switch" href="../index.html" aria-disabled="true">Shop</a>
           </div>
         </div>
       </div>
     </nav>
   </header>
-  <!-- main -->
+
+  <!-- header -->
   <main class="admin">
     <div class="container py-5">
-      <div class="row mb-5">
-        <div class="col-md-2">
-          <select class="form-select form-select-lg" name="" id="selectSort">
-            <option value="">Sort</option>
-            <option value="hightLow">Hight-Low</option>
-            <option value="lowHight">Low-Hight</option>
-          </select>
+      <div class="row">
+        <div class="col-lg-8 col-md-7 mb-5">
+          <h2 class="heading fw-bold">Products Management</h2>
         </div>
-        <div class="col-md-10 text-end">
-          <button type="button" class="btn btn-switch btn-addnew" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add New Product
-          </button>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-12">
-          <div class="input-group">
-            <input type="text" class="form-control" id="search" placeholder="Nhập tên sản phẩm cần tìm" />
-            <div class="input-group-prepend bg-info">
-              <span class="input-group-text h-100 rounded-start-0" id="btnSearch"><i
-                  class="fa fa-search text-success"></i></span>
+        <div class="col-lg-4 col-md-5 text-end mb-5">
+          <div class="row">
+            <div class="col-5">
+              <select class="form-select form-select-lg" name="" id="selectSort">
+                <option value="">Sort</option>
+                <option value="hightLow">Hight-Low</option>
+                <option value="lowHight">Low-Hight</option>
+              </select>
+            </div>
+            <div class="col-7">
+              <button type="button" class="btn btn-switch btn-addnew" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Add New
+                Product</button>
             </div>
           </div>
         </div>
       </div>
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="input-group">
+            <input type="text" class="form-control" id="search" placeholder="Nhập tên sản phẩm...">
+            <div class="input-group-prepend">
+              <span class="input-group-text h-100 rounded-start-0" id="btnSearch"><i class="fa fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
     <!-- modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel">
-              Add new product
-            </h2>
+            <h2 class="modal-title" id="exampleModalLabel">Add new product</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form id="formProd">
@@ -97,19 +104,19 @@
               <div class="mb-3">
                 <label for="" class="form-label">Name</label>
                 <input type="text" class="form-control" name="" id="name" placeholder="Name" />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_name" class="invalid-feedback"></span>
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">Image</label>
                 <input type="text" class="form-control" name="" id="img" placeholder="Link image" />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_img" class="invalid-feedback"></span>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="mb-3">
                     <label for="" class="form-label">Price</label>
                     <input type="number" class="form-control" name="" id="price" placeholder="Price" />
-                    <span id="helpId" class="invalid-feedback"></span>
+                    <span id="tb_price" class="invalid-feedback"></span>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -120,61 +127,63 @@
                       <option value="Apple">Apple</option>
                       <option value="Samsung">SamSung</option>
                     </select>
-                    <span id="helpId" class="invalid-feedback"></span>
+                    <span id="tb_type" class="invalid-feedback"></span>
                   </div>
                 </div>
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">Screen</label>
                 <input type="text" class="form-control" name="" id="screen" placeholder="Screen" />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_screen" class="invalid-feedback"></span>
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">BackCamera</label>
                 <input type="text" class="form-control" name="" id="backCamera" placeholder="12MP..." />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_backCamera" class="invalid-feedback"></span>
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">FrontCamera</label>
                 <input type="text" class="form-control" name="" id="frontCamera" placeholder="12MP..." />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_frontCamera" class="invalid-feedback"></span>
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">Description</label>
                 <input type="text" class="form-control" name="" id="desc" placeholder="Description" />
-                <span id="helpId" class="invalid-feedback"></span>
+                <span id="tb_desc" class="invalid-feedback"></span>
               </div>
-              <input type="hidden" id="idProd" value="" />
+              <!-- <input type="hidden" id="idProd" value=""> -->
+              <span id="idProduce" class="visually-hidden"></span>
+              <span id="tb_vs" class="invalid-feedback"></span>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning btn-update" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                Update product
-              </button>
-              <button type="button" class="btn btn-success btn-add" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                Add product
-              </button>
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Close
-              </button>
+              <button type="button" class="btn btn-warning btn-update">Update
+                product</button>
+              <button type="button" class="btn btn-success btn-add">Add product</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </main>
-  <!-- footer -->
+  <!-- main -->
+
   <footer>
     <div class="container">
       <div class="footer">
-        <a class="navbar-brand logo" href="#">CẠP CẠP</a>
+        <a class="navbar-brand logo" href="#">LOGO</a>
         <div class="copyright">
-          <p class="mb-0">&copy;copyright 2069</p>
+          <p class="mb-0">&copy;copyright 2024</p>
+        </div>
+        <div class="nav-foot">
+          <a class="btn-switch" href="../index.html" aria-disabled="true">Shop</a>
         </div>
       </div>
     </div>
   </footer>
+  <!-- footer -->
+
 
   <!-- axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
@@ -184,20 +193,11 @@
   <!-- toastify -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <!-- Bootstrap JavaScript Libraries -->
-  <script src="../assets/js/popper.min.js"></script>
-  <script src="../assets/js/bootstrap.min.js"></script>
-  <!-- bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <!-- admin -->
-  <script src="../assets/js/common.js"></script>
-  <script src="../assets/model/Product.js"></script>
   <script src="../assets/js/validation/validation.js"></script>
+  <script src="../assets/model/Product.js"></script>
+  <script src="../assets/js/common.js"></script>
   <script src="../assets/js/admin.js"></script>
 </body>
 
