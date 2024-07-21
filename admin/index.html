@@ -46,24 +46,17 @@
   <main class="admin">
     <div class="container py-5">
       <div class="row">
-        <div class="col-lg-8 col-md-7 mb-5">
-          <h2 class="heading fw-bold">Products Management</h2>
+        <div class="col-lg-2 col-md-3 mb-5">
+          <select class="form-select form-select-lg" name="" id="selectSort">
+            <option value="">Sort</option>
+            <option value="hightLow">Hight-Low</option>
+            <option value="lowHight">Low-Hight</option>
+          </select>
         </div>
-        <div class="col-lg-4 col-md-5 text-end mb-5">
-          <div class="row">
-            <div class="col-5">
-              <select class="form-select form-select-lg" name="" id="selectSort">
-                <option value="">Sort</option>
-                <option value="hightLow">Hight-Low</option>
-                <option value="lowHight">Low-Hight</option>
-              </select>
-            </div>
-            <div class="col-7">
-              <button type="button" class="btn btn-switch btn-addnew" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Add New
-                Product</button>
-            </div>
-          </div>
+        <div class="col-lg-10 col-md-9 text-end mb-5">
+          <button type="button" class="btn btn-switch btn-addnew" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Add New
+            Product</button>
         </div>
       </div>
       <div class="row mb-3">
