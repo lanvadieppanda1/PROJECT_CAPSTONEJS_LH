@@ -64,8 +64,7 @@ let renderProduct = (arr = products) => {
         <button class="btn btn-danger" onclick="removeProduct('${item.id
             }')">Xoá</button>
         <button class="btn btn-warning" data-bs-toggle="modal"
-                data-bs-target="#exampleModal" onclick="editProduct('${item.id
-            }')">Sửa</button>
+                data-bs-target="#exampleModal" onclick="editProduct('${item.id}')">Sửa</button>
       </td>
     </tr>
     `;
