@@ -18,7 +18,7 @@ let getInfoProduct = (temp) => {
         const { id, value } = input
         itemProduct[id] = value
         let elem = document.getElementById("tb_" + id);
-        if (temp != "1" && id == "idProduce") {
+        if ((temp != "1" && id == "idProduce") || (id !== "idProduce")) {
             checkEmplyValue = checkEmpty(elem, value);
         }
         flagCkeck &= checkEmplyValue
